@@ -1,0 +1,25 @@
+# This goes at /etc/systemd/system/meraki-harvester.service
+
+[Unit]
+After=network.target
+Description=Meraki Harvester for Cyberprobe
+
+[Service]
+Type=simple
+
+# User name
+User=user_name
+
+# Working directory
+WorkingDirectory=/path/to/working/directory
+
+# Command to execute on start
+ExecStart=/path/to/python3 /path/to/meraki.py /path/to/meraki.json
+
+SuccessExitStatus=0
+TimeoutSec=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

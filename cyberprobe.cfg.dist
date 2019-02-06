@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Cyberprobe configuration file. -->
+<configuration>
+
+  <!-- Define network interfaces to sniff. -->
+  <interfaces>
+    <!-- See docmentation for cyberprobe/cybermon about filters.
+    If cybermon is within one of the target CIDR ranges, then 
+    add 'filter="[cybermon-port]"' to the interface, so it doesn't
+    capture its own traffic. -->
+    <interface name="tun0" />
+  </interfaces>
+
+  <!-- Define IP addresses or address ranges to match on. -->
+  <targets>
+    <!-- meraki-harvester will add targets here -->
+  </targets>
+
+  <!-- Define endpoints to deliver data to. -->
+  <endpoints>
+    <endpoint hostname="probe-svc" port="9001"
+	      type="etsi" transport="tls"
+	      certificate="/probe-creds/cert.vpn"
+	      key="/probe-creds/key.vpn"
+	      trusted-ca="/probe-creds/cert.ca"/>
+  </endpoints>
+
+</configuration>
+

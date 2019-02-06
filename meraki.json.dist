@@ -1,0 +1,27 @@
+{
+    "api_key": "api_key",
+    "networks": [
+        "network_id"
+    ],
+    "ranges": {
+        "10.0.0.0/8": "private_range",
+	"192.168.0.0/16": "private_range"
+    },
+    "config_location": "./cyberprobe.cfg",
+    "poll_interval": 60,
+    "state_file": "./meraki.out",
+    "init_delta": 3600,
+    "fixed_network": "fixed",
+    "duplicates": [],
+    "documentation": {
+        "api_key": "The API key for your organization in Meraki - required",
+        "networks": "An array of the network IDs to search for devices - required",
+        "ranges": "An array of the cidr ranges and named 'networks' - default: private ranges on 'private_range' network",
+        "config_location": "The location of the cyberprobe.cfg being updated - default: './cyberprobe.cfg'",
+        "poll_interval": "How often, in seconds, the updater should run - default: 60",
+        "state_file": "The name of the file to which the state is saved - default: './meraki.out",
+        "init_delta": "The initial TTL for ageing the device records - default: 60",
+        "fixed_network": "Network name for all of the fixed IP addresses - default: 'fixed'",
+        "duplicates": "An array of device names that are likely to come up as duplicates - optional"
+    }
+}
